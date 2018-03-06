@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiangshang.xsclub.db.dao.UserMapper">
+    <sql id="Base_Column_List">
+        id,mobile, name, passwd,create_time,update_time
+    </sql>
+
+    <select id="selectByPrimaryKey" resultType="com.xiangshang.xsclub.db.model.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id}
+    </select>
+
+    <select id="selectByMobile" resultType="com.xiangshang.xsclub.db.model.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where mobile = #{mobile}
+    </select>
+</mapper>
